@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #050505;
+  color: magenta;
+}
+
+header {
+  color: cyan;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tile {
+  background: rgb(51, 51, 51);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.tile h2 {
+  margin-top: 0;
+}
