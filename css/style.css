@@ -3,11 +3,21 @@
   font-family: system-ui, sans-serif;
 }
 
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/font1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   padding: 2rem;
   background: #050505;
   color: magenta;
+  font-family: "MyFont";
+
 }
 
 header {
