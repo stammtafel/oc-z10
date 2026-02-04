@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Blog 01",
+    "description": "Einführung und Ziele",
+    "file": "blog01.html"
+  },
+  {
+    "title": "Blog 02",
+    "description": "Projekt-Update",
+    "file": "blog02.html"
+  },
+  {
+    "title": "Blog 03",
+    "description": "Technischer Deep Dive",
+    "file": "blog03.html"
+  }
+]
+
