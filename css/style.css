@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
 }
 
 body {
@@ -8,7 +7,6 @@ body {
   padding: 2rem;
   background: #050505;
   color: magenta;
-  font-family: MyFont;
 
 }
 .center {
@@ -25,10 +23,10 @@ header {
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px,31.4%));
-  gap: 1.5rem;
+  gap: 2.6rem;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #444;
+  background-color: #555;
   filter:brightness(60%);
   border-radius: 12px;
 }
