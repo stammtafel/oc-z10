@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radicale Setup Guide</title>
+</head>
+<body>
+    <h1>Radicale</h1>
+    
+    <h2>The Problem</h2>
+    <p>I use Thunderbird, I love it. The one problem I faced often is that my contacts are not synchronized, so on each device, I need to find the email address by looking in sent emails or so even if I already saved the contact on another device.</p>
+    <p>Since Thunderbird is an independent client, and IMAP/SMTP only transports email, there is no straightforward way to synchronize your contacts as it would be with for example Google or Outlook.</p>
+    
+    <h2>The Solution</h2>
+    <p>You need to actually host your own server that holds this contact information.</p>
+    <p>What is Radicale: A very simple Python server to synchronize CardDAV (contacts) and CalDAV (Calendar) information across clients and back them up.</p>
+    
+    <h2>How To</h2>
+    
+    <h3>Prerequisites</h3>
+    <p>You need a server reachable through the internet: in my case I use my bwcloud VM and my léo.com domain name.</p>
+    <p>The easiest way is to attach the server through Docker, so having a reverse proxy already set up is very useful (I use Caddy).</p>
+    
+    <h3>Radicale</h3>
+    <p>A nice guy already made a Radicale Docker image, ready for import. (<a href="https://github.com/tomsquest/docker-radicale">https://github.com/tomsquest/docker-radicale</a>)</p>
+    <p>So the process is very easy:</p>
+    <ul>
+        <li>Add the Radicale image in your Docker Compose (see how I did it at <a href="https://github.com/pebll/leo-server">https://github.com/pebll/leo-server</a>)</li>
+        <li>Create the necessary folder structure and config (see my repo also, I use password encrypted authentication)</li>
+        <li>You will need to add a user and a password encrypted with <strong>bcrypt</strong>. To generate such a thing you will first need the Apache2 service, I think <code>apt install apache2-utils</code> or something)</li>
+        <li>Then just use <code>htpasswd -c -B /radicale/config/users your_username</code> and enter your desired password twice. This will generate the password file.
+            <ul>
+                <li>(<code>-c</code> means create new, omit if adding second user, <code>-B</code> means using the bcrypt algorithm, it won't work without)</li>
+            </ul>
+        </li>
+        <li>Make a new DNS record for your desired domain name (in my case radicale.léo.com)</li>
+        <li>In the Caddy file, add a route to the Radicale container:
+            <pre><code>radicale.léo.com {
+  reverse_proxy radicale-service:5232
+}</code></pre>
+        </li>
+        <li>This should be everything. Now you can visit your website on your browser, connect with user and password and upload your CardDAV file (create new or upload existing one by downloading from your Thunderbird client)</li>
+        <li>Then just go into Thunderbird, address books, create new, CardDAV, enter URL, user and password and here you go!</li>
+    </ul>
+    
+    <h2>The Result</h2>
+    <p>All my clients are now synced and I am very happy!</p>
+</body>
+</html>
