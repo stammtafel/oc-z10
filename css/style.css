@@ -29,7 +29,7 @@ header {
 
 .tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px,31.4%));
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -45,32 +45,30 @@ header {
   text-decoration: none;
   color: inherit;
   background-color: #c52;
-  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.08);
+  filter:brightness(60%);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  transform: scale(110%);
-  filter: brightness(40%);
   z-index: 1 !important;
 }
-.tile:nth-child(2n) p { transform:rotate(10deg); }
-.tile:nth-child(3n) p { transform:rotate(-15deg); }
-.tile:nth-child(4n) p { transform:rotate(30deg); }
-.tile:nth-child(5n) p { transform:rotate(20deg); }
-.tile:nth-child(6n) p { transform:rotate(-5deg); }
-.tile:nth-child(2n) h2 { transform:rotate(-10deg); }
-.tile:nth-child(3n) h2 { transform:rotate(15deg); }
-.tile:nth-child(4n) h2 { transform:rotate(-30deg); }
-.tile:nth-child(5n) h2 { transform:rotate(-20deg); }
-.tile:nth-child(6n) h2 { transform:rotate(5deg); }
-.tile:nth-child(2n) { transform:rotate(-1deg); }
-.tile:nth-child(3n) { transform:rotate(1deg); }
-.tile:nth-child(4n) { transform:rotate(-2deg); }
-.tile:nth-child(5n) { transform:rotate(-3deg); }
-.tile:nth-child(6n) { transform:rotate(3deg); }
+.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); }
+.tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
+.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); }
+.tile:nth-child(5n) p { transform:rotate(-1deg) scale(106%); }
+.tile:nth-child(6n) p { transform:rotate(-5deg) scale(106%); }
+.tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); }
+.tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); }
+.tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); }
+.tile:nth-child(5n) h2 { transform:rotate(7deg) scale(106%); }
+.tile:nth-child(6n) h2 { transform:rotate(5deg) scale(106%); }
+.tile:nth-child(2n) { transform:rotate(-1deg) scale(108%); }
+.tile:nth-child(3n) { transform:rotate(1deg) scale(108%); }
+.tile:nth-child(4n) { transform:rotate(2deg) scale(108%); }
+.tile:nth-child(5n) { transform:rotate(1.5deg) scale(108%); }
+.tile:nth-child(6n) { transform:rotate(-1.5deg) scale(108%); }
 
 .tile:hover {
-  transform: scale(120%);
-  box-shadow: 3px 3px 5px #fff;
-  filter: brightness(50%);
+  transform: scale(110%) translateY(25px);
+  box-shadow: -0px -18px 1px #920;
+  filter: brightness(80%);
   transition: .2s ease
   z-index: -55555 !important;
 }
