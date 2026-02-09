@@ -3,11 +3,6 @@
   font-family: system-ui, sans-serif;
 }
 
-@font-face {
-  font-family: "MyFont";
-  src: url("/css/fonts/font1.ttf") format("truetype");
-}
-
 body {
   margin: 0;
   padding: 2rem;
@@ -97,12 +92,10 @@ header {
   height: auto;
   transition: .9s ease-out;
   backface-visibility: hidden;
-  content: url("/img/ocs_on.png");
   filter: saturate(20%);
 }
 
 .container:hover .image {
-  content: url("/img/ocs_on.png");
   filter: saturate(100%);
   filter: hue-rotate(9deg);
 }
