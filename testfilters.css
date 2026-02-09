@@ -1,0 +1,66 @@
+body {
+  
+}
+.outer{
+	width: 300px;
+	height: 100px;
+	left: 100px;
+	position: relative;
+	border: 1px solid blue;
+}
+.top-shape {
+	position: absolute;
+	height: 0;
+	top: 8px;
+	left: 4px;
+	width: calc(100% - 22px);
+	filter: brightness(140%) saturate(60%) ;
+	border-bottom: 2px solid #aa4a66;
+	border-left: 1px solid #aa4a6600;
+	border-right: 1px solid #aa4a6600;
+}
+.front-shape {
+	position: absolute;
+	background: #aa4a66;
+	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%);
+	border-radius: 1px;
+	width: inherit;
+	height: inherit;
+
+}
+.outer:hover{
+	transform: translateY(10px);
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.outer:hover .top-shape{
+	transition: 
+		transform 0.15s ease, 
+		box-shadow 0.15s ease;
+	border-bottom: 22px solid #aa4a66;
+	border-left: 11px solid #aa4a6600;
+	border-right: 11px solid #aa4a6600;
+	top: -8px;
+
+}	 
+.front-detail {
+	position: absolute;
+	background: #aa4a66;
+	filter: url(#wiggle-brick) brightness(120%) saturate(60%);
+	border: 2px solid black;
+	border-radius: 10px;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+	margin: 10px 0 ;
+	
+	}
+.content {
+	position: absolute;
+	filter: blur(10%) ;
+	border: 1px solid red;
+
+	width: calc(100% - 80px);
+	height: calc(100% - 80px);
+	margin: 5%;
+	padding: 10%;
+}
+

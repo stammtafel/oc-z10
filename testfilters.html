@@ -1,0 +1,44 @@
+
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Stammtisch First!</title>
+  <link rel="stylesheet" href="testfilters.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<p>
+Tryout dynamic brick texture and shape with svg filters.
+</p>
+
+<svg id="svgfilters" height="0" style="width: 0; height: 0; visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="wiggle-brickshape">
+      <feturbulence basefrequency="0.02" id="turbulence-3" numoctaves="3" result="noise" seed="3"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="15"></fedisplacementmap>
+    </filter>
+    <filter id="wiggle-brick">
+      <feturbulence basefrequency="0.99" id="turbulence-3" numoctaves="88" result="noise" seed="125"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
+    </filter>
+
+    <filter id="wiggle-big">
+      <feturbulence basefrequency="0.19" id="turbulence-3" numoctaves="18" result="noise" seed="125"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="30"></fedisplacementmap>
+    </filter>
+   <filter id="wiggle-giga">
+      <feturbulence basefrequency="0.05" id="turbulence-3" numoctaves="8" result="noise" seed="225"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="200"></fedisplacementmap>
+    </filter>
+
+
+  </defs>
+</svg>
+
+<div class="outer">
+<div class="top-shape"></div>
+<div class="front-shape"><div class="front-detail"></div></div>
+<div class="content"><p> inner element unharmed </p>
+</div>
+</div>
