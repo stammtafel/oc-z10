@@ -1,5 +1,5 @@
 body {
-	background: green;
+	background: darkgrey;
 }
 .outer{
 	width: 300px;
@@ -7,7 +7,7 @@ body {
 	left: 100px;
 	position: relative;
 	border: 1px solid blue;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .front-shape {
@@ -17,29 +17,32 @@ body {
 	border-radius: 1px;
 	width: inherit;
 	height: inherit;
-	transition: all 0.3s ease-in-out ;
-	clip-path: polygon(0% 20%, 0% 20%, 100% 20%, 100% 20%, 100% 100%, 0% 100%);
+	transition: inherit ;
+	clip-path: polygon(0% 0%, 0% 0%, 120% 0%, 120% 0%, 120% 120%, 0% 120%);
+	
 
 }
 
 .outer:hover{
-	transform: translateY(20px) scale(110%);
+	transform: translateY(10px) scale(110%);
 
 }
 
 .outer:hover .front-shape{
 	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
+	height: 110%;
 	box-shadow: 0px 40px 10px #000a;
 }	 
 .front-detail {
 	position: absolute;
 	background: #aa4a66;
-	filter: url(#wiggle-brick) brightness(120%) saturate(60%);
+	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(60%);
 	border: 2px solid black;
 	border-radius: 10px;
 	width: 90%;
 	height: 70%;
 	margin: 10px 0 ;
+
 }
 .content {
 	position: absolute;
@@ -49,6 +52,7 @@ body {
 	height: 20%;
 	margin: 5%;
 	padding: 5%;
+	transform: inherit;
 }
 /* ---------- Fog ---------- */
 html, body {
