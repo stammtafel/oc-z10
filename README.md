@@ -1,5 +1,5 @@
 # Open Coding Stammtisch Z10 Dashboard Website
-Deployed [here](g14p.github.io/oc-z10).🍓
+Deployed [here](https://g14p.github.io/oc-z10).🍓
 
 # How to add Blog entries?
 
