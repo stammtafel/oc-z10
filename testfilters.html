@@ -35,22 +35,13 @@ Tryout dynamic brick texture and shape with svg filters.
       <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
       <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
     </filter>
-
-    <filter id="wiggle-big">
-      <feturbulence basefrequency="0.19" id="turbulence-3" numoctaves="18" result="noise" seed="125"></feturbulence>
-      <fedisplacementmap in2="noise" in="SourceGraphic" scale="30"></fedisplacementmap>
-    </filter>
-   <filter id="wiggle-giga">
-      <feturbulence basefrequency="0.05" id="turbulence-3" numoctaves="8" result="noise" seed="225"></feturbulence>
-      <fedisplacementmap in2="noise" in="SourceGraphic" scale="200"></fedisplacementmap>
-    </filter>
-
-
   </defs>
 </svg>
 
-<div class="outer">
-<div class="front-shape"><div class="front-detail"></div></div>
-<div class="content"><p> inner element unharmed </p>
+<div class="brick-wrapper">
+<div class="brick-shape"><div class="brick-detail"></div></div>
+<div class="brick-content">
+<h2> Brick title </h2>
+<p> inner element unharmed </p>
 </div>
 </div>

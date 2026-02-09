@@ -15,6 +15,31 @@
     local("Grafiti2"),
     url("fonts/BoordensStreet.otf") format("opentype");
 }
+@font-face {
+  font-family: "Grafiti3";
+  src:
+    local("Grafiti3"),
+    url("fonts/aaaiight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Grafiti4";
+  src:
+    local("Grafiti4"),
+    url("fonts/MagikMarker.otf") format("opentype");
+}
+@font-face {
+  font-family: "Grafiti5";
+  src:
+    local("Grafiti5"),
+    url("fonts/jacatra.otf") format("opentype");
+}
+@font-face {
+  font-family: "Grafiti6";
+  src:
+    local("Grafiti6"),
+    url("fonts/AerosoldierDrip.otf") format("opentype");
+}
+
 
 body {
   margin: 0;
@@ -36,26 +61,30 @@ header {
 
 .tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px,31.4%));
-  gap: 2.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px,0.81fr));
+  gap: 0.8rem;
   max-width: 1000px;
   margin: 0 auto;
   background-color: #555;
   filter:brightness(60%);
   border-radius: 12px;
 }
+#row2{
+    position: relative;
+    left: -5% !important;
+}
 
 .tile {
+    left: -40%;
   position: relative;
   padding: 1.5rem;
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  background: #ffaa00 url("../img/brick3.png") no-repeat;
   filter:brightness(60%);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  z-index: 1 !important;
 }
+
 .tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); color: #448;}
 .tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
 .tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); color: #644;}
@@ -66,30 +95,24 @@ header {
 .tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); }
 .tile:nth-child(5n) h2 { transform:rotate(7deg) scale(106%); }
 .tile:nth-child(6n) h2 { transform:rotate(5deg) scale(106%); }
-.tile:nth-child(2n) { transform:rotate(-1deg) scale(108%); }
-.tile:nth-child(3n) { transform:rotate(1deg) scale(108%); }
-.tile:nth-child(4n) { transform:rotate(2deg) scale(108%); }
-.tile:nth-child(5n) { transform:rotate(1.5deg) scale(108%); }
-.tile:nth-child(6n) { transform:rotate(-1.5deg) scale(108%); }
-
-.tile:hover {
-  transform: scale(110%) translateY(25px);
-  box-shadow: -0px -18px 1px #a87;
-  filter: brightness(80%);
-  transition: .2s ease
-  z-index: -55555 !important;
-}
-
+/*
+.tile:nth-child(2n) .brick-wrapper { transform:rotate(-8deg) scale(108%); }
+.tile:nth-child(3n) .brick-wrapper { transform:rotate(-2deg) scale(108%); }
+.tile:nth-child(4n)  .brick-wrapper { transform:rotate(2deg) scale(108%); }
+.tile:nth-child(5n)  .brick-wrapper { transform:rotate(5deg) scale(108%); }
+.tile:nth-child(6n)  .brick-wrapper { transform:rotate(-5deg) scale(108%); }
+*/
 .tile h2 {
   margin-top: 0;
-  color: #ffe;
-  font-family: "Grafiti1";
+  color: #ddd;
+  font-family: "Grafiti6";
 
 }
 .tile p{
-  margin-top: 0;
+  margin-top: 3px;
   color: #aaa;
-  font-family: "Papyrus";
+  font-family: "Grafiti3";
+  font-size: 12px;
 }
 
 .container {
@@ -112,7 +135,125 @@ header {
   filter: saturate(100%);
   filter: hue-rotate(9deg);
 }
+/* ---------- Real Bicks ---- */
+.brick-wrapper{
+	width: 300px;
+	height: 100px;
+	left: 100px;
+	position: relative;
+	transition: all 0.3s ease-in-out;
 
+}
+
+.brick-shape {
+	position: absolute;
+        z-index: 1;
+	background: #aa4a66;
+	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%);
+	border-radius: 1px;
+	width: inherit;
+	height: inherit;
+	transition: inherit ;
+	clip-path: polygon(0% 0%, 0% 0%, 120% 0%, 120% 0%, 120% 120%, 0% 120%);
+	
+
+}
+
+.brick-wrapper:hover{
+	transform: rotate(0deg) translateY(20px) scale(120%);
+
+}
+
+.brick-wrapper:hover .brick-shape{
+	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
+	height: 110%;
+	box-shadow: 0px 40px 10px #000a;
+        z-index: 100 !important;
+}	 
+.brick-detail {
+	position: absolute;
+	background: #aa4a66;
+	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(60%);
+	border-radius: 10px;
+	width: 90%;
+	height: 70%;
+	margin: 10px 0 ;
+
+}
+.brick-content {
+	position: absolute;
+	width: 70%;
+	height: 0.2%;
+	margin: 0%;
+	padding-left: 25%;
+	transform: inherit;
+        z-index: 2;
+}
+.brick-content p{
+	position: absolute;
+	top: 30px;
+	
+}
+.brick-wrapper{
+	width: 300px;
+	height: 100px;
+	left: 100px;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+}
+
+.brick-shape {
+	position: absolute;
+	background: #aa4a66;
+	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%);
+	border-radius: 1px;
+	width: inherit;
+	height: inherit;
+	transition: inherit ;
+	clip-path: polygon(0% 0%, 0% 0%, 120% 0%, 120% 0%, 120% 120%, 0% 120%);
+	
+
+}
+
+.brick-wrapper:hover{
+	transform: translateY(20px) scale(120%);
+
+}
+
+.brick-wrapper:hover .brick-shape{
+	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
+	height: 110%;
+	box-shadow: 0px 40px 10px #000a;
+        z-index: 100;
+}	 
+
+.brick-wrapper:hover .brick-content{
+    z-index: 102
+}
+.brick-detail {
+	position: absolute;
+	background: #aa4a66;
+	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(60%);
+	border-radius: 10px;
+	width: 90%;
+	height: 70%;
+	margin: 10px 0 ;
+
+}
+.brick-content {
+	position: absolute;
+	width: 70%;
+	height: 0.2%;
+	margin: 0%;
+	padding-left: 25%;
+	transform: inherit;
+}
+
+.brick-content p{
+	position: absolute;
+	top: 30px;
+	
+}
 /* ---------- Fog ---------- */
 html, body {
   margin: 0;

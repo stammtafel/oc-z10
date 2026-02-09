@@ -20,9 +20,22 @@
 	  <div class="image02"></div>
 	</div>
 
-  <main class="tiles">
+	<svg id="svgfilters" height="0" style="width: 0; height: 0; visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <defs>
+		<filter id="wiggle-brickshape">
+		  <feturbulence basefrequency="0.02" id="turbulence-3" numoctaves="3" result="noise" seed="5"></feturbulence>
+		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="15"></fedisplacementmap>
+		</filter>
+		<filter id="wiggle-brick">
+		  <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
+		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
+		</filter>
+	  </defs>
+	</svg>
 
-	<a class="tile" href="#ueber">
+  <div id="row1" class="tiles">
+
+	<!--<a class="tile" href="#ueber">
 	  <h2>Über uns</h2>
 	  <p>We are round 4 Engineers reocurring in Z10.</p>
 	</a>
@@ -31,12 +44,109 @@
 	  <h2>Nächstes Treffen</h2>
 	  <p>Immer Montag 18:00 Z10 mit Exceptions.</p>
 	</a>
+	-->
 	
 	<a class="tile" href="blog.html">
-	  <h2>Blog</h2>
-	  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+  </div>
+
+  <div id=row2 class="tiles">
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
 	</a>
 
+  </div>
+  <div id=row3 class="tiles">
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+	<a class="tile" href="blog.html">
+		<div class="brick-wrapper">
+		<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+		  <h2>Blog2</h2>
+		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		</div>
+		</div>
+
+	</a>
+
+  </div>
+
+
+		<!--
 	<a class="tile" href="https://matrix.org/docs/older/introduction/">
 	  <h2>Kommunikation</h2>
 	  <p>Our homeserver: matrix.fenker.eu</p>
@@ -66,9 +176,8 @@
 	  <h2>Surprise Brick 3</h2>
 	  <p>Has Jan made new progress on his homepage?</p>
 	</a>
-
+	-->
    
-  </main>
 </body>
 </html>
 
