@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Grafiti1";
+  src:
+    local("Grafiti1"),
+    url("fonts/BrokenInk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Grafiti2";
+  src:
+    local("Grafiti2"),
+    url("fonts/BoordensStreet.otf") format("opentype");
+}
+
 body {
   margin: 0;
   padding: 2rem;
@@ -69,7 +83,8 @@ header {
 .tile h2 {
   margin-top: 0;
   color: #ffe;
-  font-family: "Papyrus";
+  font-family: "Grafiti1";
+
 }
 .tile p{
   margin-top: 0;
