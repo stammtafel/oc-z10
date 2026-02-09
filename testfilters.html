@@ -8,6 +8,19 @@
 </head>
 <body>
 
+<div id="foglayer_01" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+<div id="foglayer_02" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+<div id="foglayer_03" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+
 <p>
 Tryout dynamic brick texture and shape with svg filters.
 </p>
@@ -15,11 +28,11 @@ Tryout dynamic brick texture and shape with svg filters.
 <svg id="svgfilters" height="0" style="width: 0; height: 0; visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <defs>
     <filter id="wiggle-brickshape">
-      <feturbulence basefrequency="0.02" id="turbulence-3" numoctaves="3" result="noise" seed="3"></feturbulence>
+      <feturbulence basefrequency="0.02" id="turbulence-3" numoctaves="3" result="noise" seed="5"></feturbulence>
       <fedisplacementmap in2="noise" in="SourceGraphic" scale="15"></fedisplacementmap>
     </filter>
     <filter id="wiggle-brick">
-      <feturbulence basefrequency="0.99" id="turbulence-3" numoctaves="88" result="noise" seed="125"></feturbulence>
+      <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
       <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
     </filter>
 
@@ -37,7 +50,6 @@ Tryout dynamic brick texture and shape with svg filters.
 </svg>
 
 <div class="outer">
-<div class="top-shape"></div>
 <div class="front-shape"><div class="front-detail"></div></div>
 <div class="content"><p> inner element unharmed </p>
 </div>
