@@ -37,7 +37,7 @@ header {
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  background: #ffaa00 url("img/brick3.png") no-repeat;
+  background: #ffaa00 url("../img/brick3.png") no-repeat;
   filter:brightness(60%);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   z-index: 1 !important;
