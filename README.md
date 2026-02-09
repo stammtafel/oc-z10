@@ -1,5 +1,5 @@
-# georgpernice.github.io-oc-z10
-Open Coding Stammtisch Z10 Dashboard Website
+# Open Coding Stammtisch Z10 Dashboard Website
+Deployed [here](g14p.github.io/oc-z10).🍓
 
 # How to add Blog entries?
 
