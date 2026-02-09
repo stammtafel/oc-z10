@@ -37,18 +37,18 @@ header {
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  background-color: #c52;
+  background: #ffaa00 url("/img/brick3.png") no-repeat;
   filter:brightness(60%);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   z-index: 1 !important;
 }
-.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); }
+.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); color: #448;}
 .tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
-.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); }
+.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); color: #644;}
 .tile:nth-child(5n) p { transform:rotate(-1deg) scale(106%); }
-.tile:nth-child(6n) p { transform:rotate(-5deg) scale(106%); }
-.tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); }
-.tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); }
+.tile:nth-child(6n) p { transform:rotate(-5deg) scale(106%); color: #eee;}
+.tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); color: #fff }
+.tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); color: white}
 .tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); }
 .tile:nth-child(5n) h2 { transform:rotate(7deg) scale(106%); }
 .tile:nth-child(6n) h2 { transform:rotate(5deg) scale(106%); }
@@ -60,7 +60,7 @@ header {
 
 .tile:hover {
   transform: scale(110%) translateY(25px);
-  box-shadow: -0px -18px 1px #920;
+  box-shadow: -0px -18px 1px #a87;
   filter: brightness(80%);
   transition: .2s ease
   z-index: -55555 !important;
