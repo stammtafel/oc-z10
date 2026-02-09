@@ -5,10 +5,7 @@
 
 @font-face {
   font-family: "MyFont";
-  src: url("./fonts/font1.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  src: url("/css/fonts/font1.ttf") format("truetype");
 }
 
 body {
@@ -16,9 +13,14 @@ body {
   padding: 2rem;
   background: #050505;
   color: magenta;
+  font-family: MyFont;
 
 }
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header {
   color: cyan;
   text-align: center;
@@ -31,23 +33,80 @@ header {
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
+  background-color: #444;
+  filter:brightness(60%);
+  border-radius: 12px;
 }
 
 .tile {
-  background: rgb(51, 51, 51);
+  position: relative;
   padding: 1.5rem;
   border-radius: 12px;
   text-decoration: none;
   color: inherit;
+  background-color: #c52;
   box-shadow: 0 6px 18px rgba(255, 255, 255, 0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transform: scale(110%);
+  filter: brightness(40%);
+  z-index: 1 !important;
 }
+.tile:nth-child(2n) p { transform:rotate(10deg); }
+.tile:nth-child(3n) p { transform:rotate(-15deg); }
+.tile:nth-child(4n) p { transform:rotate(30deg); }
+.tile:nth-child(5n) p { transform:rotate(20deg); }
+.tile:nth-child(6n) p { transform:rotate(-5deg); }
+.tile:nth-child(2n) h2 { transform:rotate(-10deg); }
+.tile:nth-child(3n) h2 { transform:rotate(15deg); }
+.tile:nth-child(4n) h2 { transform:rotate(-30deg); }
+.tile:nth-child(5n) h2 { transform:rotate(-20deg); }
+.tile:nth-child(6n) h2 { transform:rotate(5deg); }
+.tile:nth-child(2n) { transform:rotate(-1deg); }
+.tile:nth-child(3n) { transform:rotate(1deg); }
+.tile:nth-child(4n) { transform:rotate(-2deg); }
+.tile:nth-child(5n) { transform:rotate(-3deg); }
+.tile:nth-child(6n) { transform:rotate(3deg); }
 
 .tile:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transform: scale(120%);
+  box-shadow: 3px 3px 5px #fff;
+  filter: brightness(50%);
+  transition: .2s ease
+  z-index: -55555 !important;
 }
 
 .tile h2 {
   margin-top: 0;
+  color: #ffe;
+  font-family: "Papyrus";
 }
+.tile p{
+  margin-top: 0;
+  color: #aaa;
+  font-family: "Papyrus";
+}
+
+.container {
+  position:relative;
+  left: 42%;
+  width: 20%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .9s ease-out;
+  backface-visibility: hidden;
+  content: url("/img/ocs_on.png");
+  filter: saturate(20%);
+}
+
+.container:hover .image {
+  content: url("/img/ocs_on.png");
+  filter: saturate(100%);
+  filter: hue-rotate(9deg);
+}
+
+
