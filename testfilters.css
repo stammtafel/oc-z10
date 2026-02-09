@@ -7,6 +7,7 @@ body {
 	left: 100px;
 	position: relative;
 	border: 1px solid blue;
+	transition: all 0.15s ease-in-out;
 }
 .top-shape {
 	position: absolute;
@@ -18,6 +19,7 @@ body {
 	border-bottom: 2px solid #aa4a66;
 	border-left: 1px solid #aa4a6600;
 	border-right: 1px solid #aa4a6600;
+	transition: all 0.15s ease-in-out ;
 }
 .front-shape {
 	position: absolute;
@@ -30,12 +32,8 @@ body {
 }
 .outer:hover{
 	transform: translateY(10px);
-	transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .outer:hover .top-shape{
-	transition: 
-		transform 0.15s ease, 
-		box-shadow 0.15s ease;
 	border-bottom: 22px solid #aa4a66;
 	border-left: 11px solid #aa4a6600;
 	border-right: 11px solid #aa4a6600;
@@ -48,18 +46,16 @@ body {
 	filter: url(#wiggle-brick) brightness(120%) saturate(60%);
 	border: 2px solid black;
 	border-radius: 10px;
-	width: calc(100% - 30px);
-	height: calc(100% - 30px);
+	width: 90%;
+	height: 70%;
 	margin: 10px 0 ;
-	
-	}
+}
 .content {
 	position: absolute;
 	filter: blur(10%) ;
 	border: 1px solid red;
-
-	width: calc(100% - 80px);
-	height: calc(100% - 80px);
+	width: 70%;
+	height: 20%;
 	margin: 5%;
 	padding: 10%;
 }
