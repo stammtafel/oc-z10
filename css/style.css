@@ -145,11 +145,14 @@ html, body {
 #foglayer_01 .image01, #foglayer_01 .image02 {
   background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png") center center/cover repeat-y transparent;
   size: cover;
+  filter: brightness(150%) blur(10px);
+
 }
 #foglayer_02 .image01, #foglayer_02 .image02,
 #foglayer_03 .image01, #foglayer_03 .image02{
   background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png") center center/cover repeat-y transparent;
   size: cover;
+  filter: brightness(150%) blur(10px);
 }
 
 /* ---------- Keyframe Layer 1 ---------- */
