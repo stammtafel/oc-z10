@@ -78,35 +78,35 @@ header {
 }
 #row1{
     position: absolute;
-    left: -5% !important;
+    left: 22% !important;
     z-index: 6
 }
 
 #row2{
     position: absolute;
-    left: -5% !important;
-    top: 20%;
+    left: 28% !important;
+    top: 16%;
     z-index: 5
 }
 
 #row3{
     position: absolute;
-    left: -5% !important;
-    top: 40%;
+    left: 22% !important;
+    top: 32%;
     z-index: 4
 }
 
 #row4{
     position: absolute;
-    left: -5% !important;
-    top: 60%;
+    left: 28% !important;
+    top: 48%;
     z-index: 3
 }
 
 #row5{
     position: absolute;
-    left: -5% !important;
-    top: 80%;
+    left: 22% !important;
+    top: 64%;
     z-index: 2
 }
 
@@ -463,3 +463,7 @@ html, body {
       width: 100%;
     }
   }
+.audioplayer{
+    position: absolute;
+    bottom: 0px;
+}
