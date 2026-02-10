@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<!--
 	<div id="foglayer_01" class="fog">
 	  <div class="image01"></div>
 	  <div class="image02"></div>
@@ -19,6 +20,9 @@
 	  <div class="image01"></div>
 	  <div class="image02"></div>
 	</div>
+-->
+<div class="myfog" id="fog1"></div>
+<div class="floor"></div>
 
 	<svg id="svgfilters" height="0" style="width: 0; height: 0; visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	  <defs>
@@ -30,6 +34,16 @@
 		  <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
 		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
 		</filter>
+		<filter id="wiggle-fog">
+		  <feturbulence basefrequency="0.01" id="turbulence-3" numoctaves="3" result="noise" seed="125"></feturbulence>
+		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="200"></fedisplacementmap>
+		</filter>
+                <filter id="wiggle-asphalt">
+		  <feturbulence basefrequency="0.41" id="turbulence-3" numoctaves="3" result="noise" seed="125"></feturbulence>
+		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="1000"></fedisplacementmap>
+		</filter>
+
+
 	  </defs>
 	</svg>
   <div id="row1" class="tiles">

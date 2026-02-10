@@ -55,6 +55,27 @@ body {
   color: magenta;
   overflow-x: hidden;
 }
+.myfog {
+    content: "";
+    position: fixed;
+    left: -10%;
+    bottom: -10%;
+    height: 72%;
+    width: 120%;
+    background: linear-gradient(transparent, #aaa8);
+    filter: url(#wiggle-fog);
+    transform: scaleX(150%);
+}
+.floor {
+    position: fixed;
+    left: -10%;
+    bottom: -10%;
+    height: 68%;
+    width: 120%;
+    background: linear-gradient(black, #aaa8);
+    filter: url(#wiggle-asphalt) blur(2px);
+    transform: scaleX(150%);
+}
 .center {
   display: flex;
   justify-content: center;
