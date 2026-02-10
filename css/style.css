@@ -72,13 +72,42 @@ header {
   gap: 2.3rem;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #555;
+  background-color: #333;
   filter:brightness(60%);
   border-radius: 12px;
 }
-#row2, #row4{
-    position: relative;
+#row1{
+    position: absolute;
     left: -5% !important;
+    z-index: 6
+}
+
+#row2{
+    position: absolute;
+    left: -5% !important;
+    top: 20%;
+    z-index: 5
+}
+
+#row3{
+    position: absolute;
+    left: -5% !important;
+    top: 40%;
+    z-index: 4
+}
+
+#row4{
+    position: absolute;
+    left: -5% !important;
+    top: 60%;
+    z-index: 3
+}
+
+#row5{
+    position: absolute;
+    left: -5% !important;
+    top: 80%;
+    z-index: 2
 }
 
 .tile {
@@ -146,14 +175,15 @@ header {
 	left: 100px;
 	position: relative;
 	transition: all 0.3s ease-in-out;
+        filter: sepia(50%);
 
 }
 
 .brick-shape {
 	position: absolute;
         z-index: 1;
-	background: #aa4a66;
-	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%);
+	background: #998866;
+	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%) sepia(50%);
 	border-radius: 1px;
 	width: inherit;
 	height: inherit;
@@ -176,8 +206,8 @@ header {
 }	 
 .brick-detail {
 	position: absolute;
-	background: #aa4a66;
-	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(60%);
+	background: #986;
+	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(80%);
 	border-radius: 10px;
 	width: 90%;
 	height: 70%;
