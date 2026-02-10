@@ -65,16 +65,25 @@ header {
   text-align: center;
   margin-bottom: 2rem;
 }
-
+.zement{
+    background-color: darkgrey;
+    position: absolute;
+    left: 29.5%;
+    width: 53.5%;
+    height: 68%;
+    z-index: 1;
+    filter: sepia(40%) brightness(30%);
+}
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px,0.81fr));
   gap: 2.3rem;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #333;
+  background-color: #1110;
   border-radius: 12px;
 }
+
 #row1{
     position: absolute;
     left: 22% !important;
@@ -84,28 +93,28 @@ header {
 #row2{
     position: absolute;
     left: 28% !important;
-    top: 16%;
+    top: 14%;
     z-index: 5
 }
 
 #row3{
     position: absolute;
     left: 22% !important;
-    top: 32%;
+    top: 28%;
     z-index: 4
 }
 
 #row4{
     position: absolute;
     left: 28% !important;
-    top: 48%;
+    top: 42%;
     z-index: 3
 }
 
 #row5{
     position: absolute;
     left: 22% !important;
-    top: 64%;
+    top: 56%;
     z-index: 2
 }
 
@@ -294,7 +303,7 @@ html, body {
   top: 0;
   width: 100%;
   -webkit-filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
-  filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+  filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2) brightness(200%) contrast(200%);
 }
 #foglayer_01, #foglayer_02, #foglayer_03 {
   height: 200%;
