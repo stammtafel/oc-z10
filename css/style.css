@@ -62,7 +62,7 @@ header {
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px,0.81fr));
-  gap: 0.8rem;
+  gap: 2.3rem;
   max-width: 1000px;
   margin: 0 auto;
   background-color: #555;
@@ -73,6 +73,11 @@ header {
     position: relative;
     left: -5% !important;
 }
+#row4{
+    position: relative;
+    left: -2% !important;
+}
+
 
 .tile {
     left: -40%;
@@ -85,16 +90,12 @@ header {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); color: #448;}
+.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); color: #44fa;}
 .tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
-.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); color: #644;}
-.tile:nth-child(5n) p { transform:rotate(-1deg) scale(106%); }
-.tile:nth-child(6n) p { transform:rotate(-5deg) scale(106%); color: #eee;}
-.tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); color: #fff }
-.tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); color: white}
-.tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); }
-.tile:nth-child(5n) h2 { transform:rotate(7deg) scale(106%); }
-.tile:nth-child(6n) h2 { transform:rotate(5deg) scale(106%); }
+.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); color: #f44a;}
+.tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); color: #2a2a; }
+.tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); color: #4d38;}
+.tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); color: #ff0a; }
 /*
 .tile:nth-child(2n) .brick-wrapper { transform:rotate(-8deg) scale(108%); }
 .tile:nth-child(3n) .brick-wrapper { transform:rotate(-2deg) scale(108%); }
@@ -106,11 +107,12 @@ header {
   margin-top: 0;
   color: #ddd;
   font-family: "Grafiti6";
+  font-size:  40px;
 
 }
 .tile p{
   margin-top: 3px;
-  color: #aaa;
+  color: #aaa4;
   font-family: "Grafiti3";
   font-size: 12px;
 }
