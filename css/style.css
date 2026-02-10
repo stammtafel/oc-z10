@@ -73,7 +73,6 @@ header {
   max-width: 1000px;
   margin: 0 auto;
   background-color: #333;
-  filter:brightness(60%);
   border-radius: 12px;
 }
 #row1{
@@ -181,7 +180,6 @@ header {
 
 .brick-shape {
 	position: absolute;
-        z-index: 1;
 	background: #998866;
 	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%) sepia(50%);
 	border-radius: 1px;
@@ -202,7 +200,6 @@ header {
 	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
 	height: 110%;
 	box-shadow: 0px 40px 10px #000a;
-        z-index: 100 !important;
 }	 
 .brick-detail {
 	position: absolute;
@@ -221,7 +218,6 @@ header {
 	margin: 0%;
 	padding-left: 25%;
 	transform: inherit;
-        z-index: 2;
 }
 .brick-content p{
 	position: absolute;
@@ -258,11 +254,9 @@ header {
 	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
 	height: 110%;
 	box-shadow: 0px 40px 10px #000a;
-        z-index: 100;
 }	 
 
 .brick-wrapper:hover .brick-content{
-    z-index: 102
 }
 .brick-detail {
 	position: absolute;

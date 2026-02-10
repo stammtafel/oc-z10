@@ -19,10 +19,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       a.href = `blog/${entry.file}`;
 
       a.innerHTML = `
-        <h2>${entry.title}</h2>
-        <p>${entry.description}</p>
+		<div class="brick-wrapper">
+	  	<div class="brick-shape"><div class="brick-detail"></div></div>
+		<div class="brick-content">
+        <h2 style="color: #1114;">${entry.title}</h2>
+        <p style="color: #111a;">${entry.description}</p>
+		</div>
+		</div>
       `;
-
+				 	
       container.appendChild(a);
     });
 

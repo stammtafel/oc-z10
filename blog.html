@@ -9,18 +9,30 @@
 <body>
 
 <header>
- <p><i>Gemeinsam coden, basteln & austauschen </i></p> 
 <div class="logo">
 <img src="img/ocs_on.png" alt="OCSZ10 Logo" width="200">
 </div>
 </header>
 <a href="index.html">Zurück zur Main Page</a>
 
-<h1>Blogposts</h1>
+<h1 style='font-family: "Grafiti1"; font-size: 50px; position: absolute; left: 25%; top: 5%;'>Blogposts</h1>
 <main class="tiles" id="blog-tiles"></main>
 <script src="blog.js" defer ></script>
 
 
+
+<svg id="svgfilters" height="0" style="width: 0; height: 0; visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="wiggle-brickshape">
+      <feturbulence basefrequency="0.02" id="turbulence-3" numoctaves="3" result="noise" seed="5"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="15"></fedisplacementmap>
+    </filter>
+    <filter id="wiggle-brick">
+      <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
+      <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
+    </filter>
+  </defs>
+</svg>
 
 
 <body>
