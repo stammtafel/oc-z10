@@ -55,6 +55,7 @@ body {
   color: magenta;
   overflow-x: hidden;
   zoom: 35%;
+  cursor: url("../cursor2.cur"), pointer !important; 
 }
 @keyframes zoomin { 
     0% { zoom: 35%;transform: rotate(360deg);} 
@@ -120,6 +121,7 @@ header {
     filter: sepia(40%) brightness(30%);
 }
 .tiles {
+  cursor: inherit;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px,0.81fr));
   gap: 2.3rem;
@@ -166,6 +168,7 @@ header {
 }
 
 .tile {
+  cursor: inherit;
     left: -40%;
   position: relative;
   padding: 1.5rem;
