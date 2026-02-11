@@ -152,9 +152,9 @@ header {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%); color: #441a;}
+.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%);}
 .tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
-.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); color: #111a;}
+.tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); }
 .tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); color: #222a; }
 .tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); color: #1118;}
 .tile:nth-child(4n) h2 { transform:rotate(-7deg) scale(106%); color: #110a; }
@@ -166,15 +166,18 @@ header {
 .tile:nth-child(6n)  .brick-wrapper { transform:rotate(-5deg) scale(108%); }
 */
 .tile h2 {
+    position: absolute;
   margin-top: 0;
   color: #111a;
   font-family: "Grafiti7";
   font-size:  80px;
+  z-index: 11;
 
 }
 .tile p{
+    position: absolute;
   margin-top: 3px;
-  color: #aaa4;
+  color: #aaf8;
   font-family: "Grafiti3";
   font-size: 12px;
 }
