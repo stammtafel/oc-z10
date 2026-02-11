@@ -55,7 +55,7 @@ body {
   color: magenta;
   overflow-x: hidden;
   zoom: 35%;
-  cursor: url("../cursor2.cur"), pointer !important; 
+  cursor: url("../cursor2.cur"), auto !important; 
 }
 @keyframes zoomin { 
     0% { zoom: 35%;transform: rotate(360deg);} 
