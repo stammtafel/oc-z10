@@ -89,9 +89,10 @@ header {
 .zement{
     background-color: darkgrey;
     position: absolute;
-    left: 29.5%;
-    width: 53.5%;
-    height: 68%;
+    left: calc(48% - 450px + 140px);
+    top: calc(40% - 200px + 40px);
+    width: calc(3 * 300px - 120px);
+    height: calc(5 * 120px - 40px);
     z-index: 1;
     filter: sepia(40%) brightness(30%);
 }
@@ -101,41 +102,42 @@ header {
   gap: 2.3rem;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #1110;
+  background-color: #1111ff14
   border-radius: 12px;
 }
 
 #row1{
     position: absolute;
-    left: 22% !important;
+    left: calc(48% - 450px);
+    top: calc(40% - 200px + 80px * 0);
     z-index: 6
 }
 
 #row2{
     position: absolute;
-    left: 28% !important;
-    top: 14%;
+    left: calc(48% - 450px + 100px);
+    top: calc(40% - 200px + 120px * 1);
     z-index: 5
 }
 
 #row3{
     position: absolute;
-    left: 22% !important;
-    top: 28%;
+    left: calc(48% - 450px);
+    top: calc(40%  - 200px + 120px * 2);
     z-index: 4
 }
 
 #row4{
     position: absolute;
-    left: 28% !important;
-    top: 42%;
+    left: calc(48% - 450px + 100px);
+    top: calc(40%  - 200px + 120px * 3);
     z-index: 3
 }
 
 #row5{
     position: absolute;
-    left: 22% !important;
-    top: 56%;
+    left: calc(48% - 450px);
+    top: calc(40%  - 200px + 120px * 4);
     z-index: 2
 }
 
