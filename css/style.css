@@ -70,7 +70,7 @@ body {
 body.unzoomed{
     position: relative;
     zoom: 35%;
-    cursor: default, auto !important; 
+    cursor: url("../cursor7.cur"), auto !important; 
     animation: zoomout 0.5s ease-in-out;
 }
 body.zoomed{
