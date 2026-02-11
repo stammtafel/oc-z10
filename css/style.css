@@ -54,6 +54,7 @@ body {
   background: #050505;
   color: magenta;
   overflow-x: hidden;
+  zoom: 40%;
 }
 .myfog {
     content: "";
@@ -152,8 +153,8 @@ header {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%);}
-.tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); }
+.tile:nth-child(2n) p { transform:rotate(10deg) scale(106%);filter: hue-rotate(90deg);}
+.tile:nth-child(3n) p { transform:rotate(-15deg) scale(106%); filter: sepia(50%); }
 .tile:nth-child(4n) p { transform:rotate(13deg) scale(106%); }
 .tile:nth-child(2n) h2 { transform:rotate(-10deg) scale(106%); color: #222a; }
 .tile:nth-child(3n) h2 { transform:rotate(7deg) scale(106%); color: #1118;}
@@ -208,63 +209,9 @@ header {
 	height: 100px;
 	left: 100px;
 	position: relative;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
         filter: sepia(50%);
 
-}
-
-.brick-shape {
-	position: absolute;
-	background: #998866;
-	filter: url(#wiggle-brickshape) brightness(120%) saturate(60%) sepia(50%);
-	border-radius: 1px;
-	width: inherit;
-	height: inherit;
-	transition: inherit ;
-	clip-path: polygon(0% 0%, 0% 0%, 120% 0%, 120% 0%, 120% 120%, 0% 120%);
-	
-
-}
-
-.brick-wrapper:hover{
-	transform: rotate(0deg) translateY(20px) scale(120%);
-
-}
-
-.brick-wrapper:hover .brick-shape{
-	clip-path: polygon(0% 20%, 30% 0%, 70% 0%, 100% 20%, 200% 100%, 0% 200%);
-	height: 110%;
-	box-shadow: 0px 40px 10px #000a;
-}	 
-.brick-detail {
-	position: absolute;
-	background: #986;
-	filter: url(#wiggle-brick) blur(2px) brightness(120%) saturate(80%);
-	border-radius: 10px;
-	width: 90%;
-	height: 70%;
-	margin: 10px 0 ;
-
-}
-.brick-content {
-	position: absolute;
-	width: 70%;
-	height: 0.2%;
-	margin: 0%;
-	padding-left: 25%;
-	transform: inherit;
-}
-.brick-content p{
-	position: absolute;
-	top: 30px;
-	
-}
-.brick-wrapper{
-	width: 300px;
-	height: 100px;
-	left: 100px;
-	position: relative;
-	transition: all 0.3s ease-in-out;
 }
 
 .brick-shape {
@@ -281,7 +228,7 @@ header {
 }
 
 .brick-wrapper:hover{
-	transform: translateY(20px) scale(120%);
+	transform: translateY(20%) scale(120%);
 
 }
 
