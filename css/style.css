@@ -55,7 +55,7 @@ body {
   color: magenta;
   overflow-x: hidden;
   zoom: 35%;
-  cursor: url("../cursor2.cur"), auto !important; 
+  cursor: url("../cursor7.cur"), auto !important; 
 }
 @keyframes zoomin { 
     0% { zoom: 35%;transform: rotate(360deg);} 
@@ -70,6 +70,7 @@ body {
 body.unzoomed{
     position: relative;
     zoom: 35%;
+    cursor: default, auto !important; 
     animation: zoomout 0.5s ease-in-out;
 }
 body.zoomed{
