@@ -54,7 +54,28 @@ body {
   background: #050505;
   color: magenta;
   overflow-x: hidden;
-  zoom: 40%;
+  zoom: 35%;
+}
+@keyframes zoomin { 
+    0% { zoom: 35%;transform: rotate(360deg);} 
+    100% { zoom: 100%;transform: rotate(0deg) ;} 
+}
+@keyframes zoomout { 
+    0% { zoom: 100%; transform: rotate(0deg);} 
+    100% { zoom: 35%; transform: rotate(360deg);} 
+}
+@keyframes idle { 100% {} }
+
+body.unzoomed{
+    position: relative;
+    zoom: 35%;
+    animation: zoomout 0.5s ease-in-out;
+}
+body.zoomed{
+    position: relative;
+    padding: 0%;
+    zoom:100%;
+    animation: zoomin 0.5s ease-in-out;
 }
 .myfog {
     content: "";
@@ -90,6 +111,7 @@ header {
 .zement{
     background-color: darkgrey;
     position: absolute;
+    margin-top: 20%;
     left: calc(48% - 450px + 140px);
     top: calc(40% - 200px + 40px);
     width: calc(3 * 300px - 120px);
@@ -103,43 +125,44 @@ header {
   gap: 2.3rem;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #1111ff14
+  margin-top: 20%;
+  background-color: #1111ff00;
   border-radius: 12px;
 }
 
 #row1{
     position: absolute;
     left: calc(48% - 450px);
-    top: calc(40% - 200px + 80px * 0);
-    z-index: 6
+    top: calc(70% - 200px + 80px * 0);
+    z-index: 6;
 }
 
 #row2{
     position: absolute;
     left: calc(48% - 450px + 100px);
-    top: calc(40% - 200px + 120px * 1);
-    z-index: 5
+    top: calc(70% - 200px + 120px * 1);
+    z-index: 5;
 }
 
 #row3{
     position: absolute;
     left: calc(48% - 450px);
-    top: calc(40%  - 200px + 120px * 2);
-    z-index: 4
+    top: calc(70%  - 200px + 120px * 2);
+    z-index: 4;
 }
 
 #row4{
     position: absolute;
     left: calc(48% - 450px + 100px);
-    top: calc(40%  - 200px + 120px * 3);
-    z-index: 3
+    top: calc(70%  - 200px + 120px * 3);
+    z-index: 3;
 }
 
 #row5{
     position: absolute;
     left: calc(48% - 450px);
-    top: calc(40%  - 200px + 120px * 4);
-    z-index: 2
+    top: calc(70%  - 200px + 120px * 4);
+    z-index: 2;
 }
 
 .tile {
