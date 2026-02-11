@@ -2,11 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Brick it!</title>
+  <title>Bricked-IT!</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body class="zoomed">
 <!--
 	<div id="foglayer_01" class="fog">
 	  <div class="image01"></div>
@@ -34,11 +34,11 @@
 		  <feturbulence basefrequency="0.1" id="turbulence-3" numoctaves="2" result="noise" seed="125"></feturbulence>
 		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="100"></fedisplacementmap>
 		</filter>
-		<filter id="wiggle-fog">
+		<filter id="wiggle-fogi">
 		  <feturbulence basefrequency="0.01" id="turbulence-3" numoctaves="3" result="noise" seed="125"></feturbulence>
 		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="200"></fedisplacementmap>
 		</filter>
-                <filter id="wiggle-asphalt">
+                <filter id="wiggle-iasphalt">
 		  <feturbulence basefrequency="0.41" id="turbulence-3" numoctaves="3" result="noise" seed="125"></feturbulence>
 		  <fedisplacementmap in2="noise" in="SourceGraphic" scale="1000"></fedisplacementmap>
 		</filter>
@@ -155,12 +155,24 @@
 		</div>
 
 	</a>
- 	<a class="tile" href="blog.html">
+ 	<a class="tile" href="" onclick='
+                    if (document.getElementsByTagName("body")[0].classList.contains("zoomed")){
+                        document.getElementsByTagName("body")[0].classList.remove("zoomed"); 
+                        document.getElementsByTagName("body")[0].classList.add("unzoomed");
+                       } 
+                    else if (document.getElementsByTagName("body")[0].classList.contains("unzoomed")){
+                        document.getElementsByTagName("body")[0].classList.remove("unzoomed");
+                        document.getElementsByTagName("body")[0].classList.add("zoomed");
+                        }
+                    return false; // prevent from reloading
+                    '
+                    style="pointer-events: hover; cursor: default;"
+                    >
 		<div class="brick-wrapper">
 		<div class="brick-shape"><div class="brick-detail"></div></div>
 		<div class="brick-content">
-		  <h2></h2>
-		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
+		  <h2>Zoom</h2>
+		  <p>Browse Bricks and read Grafitis. Its great.</p>
 		</div>
 		</div>
 
@@ -202,7 +214,7 @@
 		<div class="brick-wrapper">
 		<div class="brick-shape"><div class="brick-detail"></div></div>
 		<div class="brick-content">
-		  <h2></h2>
+		  <h2>Test</h2>
 		  <p>Browse our blog. Its great .. You should read it. Its great.</p>
 		</div>
 		</div>
@@ -213,8 +225,8 @@
 </div>
 
 <div class="audioplayer">
-<embed src="sfx/nastelbom-rock.mp3" />   
-<audio>
+<embed style="color: 0000;" src="sfx/nastelbom-rock.mp3" />   
+<audio >
 	<source src="audio/beep.mp3"></source>
 	<source src="audio/beep.ogg"></source>
 	Your browser isn't invited for super fun audio time.
