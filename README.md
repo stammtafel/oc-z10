@@ -9,13 +9,8 @@ Deployed [here](https://stammtafel.github.io/oc-z10/).🍓
 
 ## How to write Blog entries in Markdown and convert 'em
 [according to them](https://gist.github.com/farisubuntu/3ef185915077f84987c7015d00db6105)
-1. using `markdown`
 
-```sh
-$ sudo apt install markdown
+```bash
+ # apt install pandoc
+ $ pandoc -s somefile.md -o somefile2.html
 ```
-
-To convert a “.md” file to “.html” file, run a command in the following format:
-
-```sh
-$ markdown file.md > file.html
