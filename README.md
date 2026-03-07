@@ -15,7 +15,7 @@ Deployed [here](https://stammtafel.github.io/oc-z10/).🍓
  $ pandoc -s somefile.md -o somefile2.html
 ```
 
-**Notes: ** 
+**Notes:** 
 For Parser to work better dont forget to add a new line after a list heading like 
 ```
 Some list
