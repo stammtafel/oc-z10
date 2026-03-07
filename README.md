@@ -4,7 +4,7 @@ Deployed [here](https://stammtafel.github.io/oc-z10/).🍓
 # Blog entries
 ## Write them in markdown
 **Notes:** 
-For Parser to work better dont forget to add a new line after a list heading like 
+⚠️For Parser to work better dont forget to add a new line after a list heading like 
 ```
 Some list
 
@@ -22,4 +22,4 @@ Some list
 ## Add them
 
 1. write a new `blog01.html` or 02 03 etc if 01 exists already in valid HTML.
-2. edit blog/blogindex.json and enter your new blogentry there s.t. it is listed.
+2. ⚠️ edit `blog/blogindex.json` and enter your new blogentry there s.t. it is listed.
