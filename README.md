@@ -12,7 +12,6 @@ Some list
 * item2
 ```
 ## convert 'em to HTML
-[according to them](https://gist.github.com/farisubuntu/3ef185915077f84987c7015d00db6105)
 
 ```bash
  # apt install pandoc
