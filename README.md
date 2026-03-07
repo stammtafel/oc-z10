@@ -19,7 +19,7 @@ Deployed [here](https://stammtafel.github.io/oc-z10/).🍓
 For Parser to work better dont forget to add a new line after a list heading like 
 ```
 Some list
-<NEWLINE!!>
+
 * item1
 * item2
 ```
