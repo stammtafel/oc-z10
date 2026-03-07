@@ -19,7 +19,7 @@ Some list
  $ pandoc -s somefile.md -o somefile2.html
 ```
 
-## Add Blog Entries
+## Add them
 
 1. write a new `blog01.html` or 02 03 etc if 01 exists already in valid HTML.
 2. edit blog/blogindex.json and enter your new blogentry there s.t. it is listed.
