@@ -1,0 +1,262 @@
+<h1 id="pihole---free-ur-home-wifi">Pihole - Free ur home wifi</h1>
+<p>I recently installed pihole on my parents home wifi. Here are some
+thoughts and ideas on how to do it. I was motivated by ct3003 ( Kenos
+video).</p>
+<h2 id="what-is-it">What is it?</h2>
+<p>First lets think about what it is and does. It impersonates the DNS
+server for your Router. Its like a little man that stands in front of
+your porch looks at envelopes and throws them and doesnt accept them if
+they are from googleadservices.com and other annoying domains.</p>
+<p>This is why it can only block static ads tutorial and blog websites
+but not youtube ads. For youtube ads you need a little man that
+<em>opens the envelope</em> looks inside and decides this video is an
+advertisement clip.</p>
+<p>In general this makes web pages nice as they used to be and also
+speeds up loading time. At our home it claims to block 10 - 30% of the
+requests so this must have a performance impact, as all those requests
+need not be processed.</p>
+<h3 id="why-pihole-adblock-instead-of-only-ublock-origin-addon">Why
+pihole + adblock instead of only uBlock Origin addon?</h3>
+<p>I guess the main feature is its good for non-techies as everyone
+benefits + it removes ads on ebooks and other smart devices However it
+doesnt remove youtube ads :/ For that Revanced Youtube might be
+interesting if you want an app instead of brave) I think it might be a
+more clean way as you cannot even resolve the Domain of an ad if you
+want to.</p>
+<h3 id="possible-disadvantages-of-pihole">Possible disadvantages of
+pihole</h3>
+<ul>
+<li>dependency of your wifi of the pi -&gt; you can make a detailed one
+or two page instruction on how to revert those 3 router configurations
+that you need to do to effectively change back the DNS server from pi to
+the default one in case the pi dies (but even if you know how to restore
+default settings theoretically it still is more likely to break than
+your default DNS server, yes)</li>
+<li>some (very few ads are actually useful for some peeople. My
+Schwägerin mentioned she cannot click on previews of amazon products
+presented in the google search anymore but has to go to amazon
+page.</li>
+</ul>
+<h1 id="what-did-i-do-in-a-nutshell">What did I do (in a nutshell)</h1>
+<ol type="1">
+<li>take old laptop and put debian on it</li>
+<li>setup openssh-server and configure the /etc/ssh/sshd_config file
+such that
+<ul>
+<li>root login disallowed</li>
+<li>password login disallowed</li>
+<li>change default ssh port</li>
+</ul></li>
+<li>install docker from their official setup instructions for
+debian</li>
+<li>looked up pihole docker compose yaml</li>
+<li>adapted to my needs</li>
+<li>started the docker compose yaml with docker compose up</li>
+<li><h2
+id="wrote-some-docs-to-how-to-restore-the-old-settings-and-dns-server-and-printed-them">wrote
+some docs to how to restore the old settings and DNS Server and printed
+them</h2>
+<h1 id="what-i-did-in-detail">What i did in Detail</h1>
+<h2 id="installing-debian-old-notebook-server">Installing Debian + old
+Notebook = Server</h2></li>
+</ol>
+<p><strong>Heimnetz appearance des servers</strong> probably some
+useless thing but i settled to name the laptop like so even if i dont
+have this domain<br />
+myserver.intranet-myfamily.org</p>
+<p>Name des non root user for everyday tasks<br />
+debian<br />
+psswd: XXXXX</p>
+<p>Partitionierung von<br />
+sda scsi2</p>
+<p>4 Partitionen<br />
+extra Ext4 home partition gewählt um sauberer zu trennen</p>
+<p>openssh installation notwendig
+https://linuxcapable.com/how-to-install-ssh-and-enable-on-debian/
+gelesen</p>
+<p>maybe read and try <a
+href="https://techyorker.com/how-to-set-up-wifi-in-debian-with-the-command-line/">this
+tutorial</a> to get wifi adapter working if you used LAN at installation
+or skip to next chapter for the solution</p>
+<h1 id="server-needs-to-join-home-wifi">Server needs to join home
+Wifi</h1>
+<p>tried nmcli tried wpa_supplicant tried so much stuff &gt;
+<strong>FINAL SOLUTION</strong> : just use <code>nmtui</code> which is a
+terminal gui network manager interface it is so much easier.</p>
+<h1 id="install-a-desktop-environment-de">Install a desktop environment
+(DE)</h1>
+<p>I went with &gt; xcfe</p>
+<p>as its nice and lean. Works outof the box with one command
+installable :)</p>
+<h1 id="ssh-access">SSH access</h1>
+<p>it works. we need <code>openssh</code> on the server and <a
+href="https://linuxcapable.com/how-to-install-ssh-and-enable-on-debian/">this
+tutorial</a> really helps with installing it and setting up pubkey auth
+etc there and walk you through it.<br />
+A central thing is the <code>/etc/ssh/sshd_config</code> which defines
+the ways of ssh access of the server and lies on the server</p>
+<p>I locked myself out at some point. Strange as my pubkey is in
+authorized keys…<br />
+Solution in the sshd_config file we comment out the AuthorizedKeysFile
+(and set the desired path in <code>~/.ssh/authorized_keys</code> )</p>
+<p>after this file is changed we allways need to reboot ssh with:<br />
+<code># systemctl restart ssh</code></p>
+<p>Adding the ssh connected user to sudoers group ist in sofern gut
+glaub ich weil der root user nicht der sein soll mit dem man ssh
+connecten kann aber man will ja auch wat mit admin rechten
+schaffen..:<br />
+<a
+href="https://linuxcapable.com/how-to-add-a-user-to-sudoers-on-debian/">here
+some tutorial i read</a></p>
+<ul>
+<li>assume your name is josh and you cannot decide if you are
+alive..</li>
+<li>so after apt update we install <code>sudo</code> program and then
+we<br />
+<code>sudo usermod -aG sudo josh</code><br />
+while the opposite would be<br />
+<code>sudo deluser josh sudo</code></li>
+</ul>
+<p>Now we had some problems of the<br />
+ssh access not permitted (publickey) type:<br />
+Typical problems like these are caused by fecking up the folder
+permissions on the server or even the client (i dare to say a frequent
+developer probably has them set up correctly on the client already so
+worry about the server instead)</p>
+<ul>
+<li>the <code>/home/MYUSERNAME/.ssh</code> should have permission
+700<br />
+and the contained <code>authorized_keys</code> file needs permission
+600</li>
+<li>however what solved it for me was looking into our
+<code>/etc/ssh/sshd_config</code> file which we know and love and double
+check the reference to where the authorized keys file is searched. I
+changed it from <code>~/.ssh/authorized_keys</code> to
+<code>/home/MYUSERNAME/.ssh/authorized_keys</code> and the explicitness
+cured my ssh connection :)</li>
+</ul>
+<h1 id="docker">Docker</h1>
+<p>First i want to install docker if possible. i will followed this <a
+href="https://docs.docker.com/engine/install/debian/">official
+tutorial</a><br />
+I also added my user to the docker group<br />
+On Debian and Ubuntu, the Docker service starts on boot by default
+btw.<br />
+I need to care about dockers logging drivers and set up log rotation
+in<br />
+<code>/etc/docker/daemon.json</code> like described <a
+href="https://docs.docker.com/engine/logging/drivers/json-file/">here by
+docker docs</a>.<br />
+its done. i think it should work dunno how to test tho</p>
+<h1 id="pihole">pihole</h1>
+<p>i installed an ssh <code>deploykey</code> on the server that has read
++ write access <strong>only</strong> to my open source pihole repo<br />
+the repo works as i added this to the ~/.ssh/config of the server:</p>
+<pre><code>Host codeberg.org
+    HostName codeberg.org
+    IdentityFile ~/.ssh/id_homeserver_deploykey
+    Port 22</code></pre>
+<ul>
+<li><code>docker compose up</code> in the home-pihole folder
+<strong>launches pihole DNS server</strong> and now makes the pihole
+dashboard accessible on the ip address of my server.<br />
+We can log in using the pihole password specified in the
+<code>.env</code> file of our own pihole repo</li>
+<li>we would like to access it from the hobbit domain s.t. hobbits now
+where to find the wirkaufennichts project so i set up a dns entry in
+mydomain.de s.t.<br />
+<code>&lt;PIHOLESUBDOMAIN&gt;.mydomain.de</code> points to the ip
+address of server</li>
+</ul>
+<p>the domain doesnt work yet but then again i dont use a reverse proxy
+yet maybe thats a problem as i neither use anything that enables true
+https and fetches a ssl cert for the dashboard<br />
+at least not knowingly. maybe pihole does so but in any case it need
+nginx to become secure. Lets roll!!</p>
+<p>TODO</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />A static IP address or
+DHCP reservation for your server (critical , your entire network depends
+on this IP for DNS)</label></li>
+</ul>
+<h1 id="router-stuff">router stuff</h1>
+<p>I can access the router UI at this ip http://192.168.178.1/<br />
+that is http://YYY.YYY.YYY.1 for if the server has the IP
+http://YYY.YYY.YYY.XXX<br />
+here we can do maintenance lets see what we can do at a fritzbox
+interface..</p>
+<p><strong>Intermezzo :</strong> Btw i think the dynamic IP rotation is
+called <strong>DHCP</strong> afaik</p>
+<p>Now lets see .. we can login into fritzbox only with another password
+that is not equal to the wifi access password! ask your wifi maintainer
+or inspect the routers case to find it :)</p>
+<h2 id="changing-the-dns-server-on-a-fritzbox">changing the DNS server
+on a Fritzbox</h2>
+<p><img src=":/07b82d364e8745fb8334c7cbeee01cef"
+alt="86a3aa10228a8091e0823f34025628ad.png" /><br />
+but to which value ?? lets see first tomorrow</p>
+<h1 id="soon---migrate-to-iptables-firewall">SOON -&gt; Migrate to
+iptables firewall ?</h1>
+<p>Since ssh seems to work lets move on..</p>
+<blockquote>
+<p>Make sure that any firewall rulesets you use are created with
+iptables or ip6tables, and that you add them to the DOCKER-USER
+chain</p>
+</blockquote>
+<p>acc. to docker docs. Also they basically say tho that active fiddling
+with iptables is not encouraged <a
+href="https://docs.docker.com/engine/network/packet-filtering-firewalls/">(see
+here)</a><br />
+Therefore we just need a way to see which ports are open on the server
+using iptables.<br />
+<a
+href="https://www.cyberciti.biz/faq/how-to-list-all-iptables-rules-in-linux/">This
+webiste</a> looks good and tells us sth about it.</p>
+<pre><code># iptables -S </code></pre>
+<p>seems to print all ipv4 rules and ip6tables is used for the others.
+The fact that ip tables exists is enough for me. I dont want to modify
+it just be able to inspect which ports are open</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />decided not remove ufw. i
+think it doesnt do much harm to keep it (future georg was
+happy)</label></li>
+<li><label><input type="checkbox" checked="" />setup my allow 22/tcp in
+iptables. while doing so change ssh port to 2222 for security inside of
+sshd_config.<br />
+--<br />
+as ufw still works i could just allow 2222/tcp via ufw and then this is
+applied to iptables by ufw.<br />
+however once docker uses 2222 docker has vorrang</label></li>
+<li><label><input type="checkbox" checked="" />then make sure the
+correct port 2222 is open on the server and others not<br />
+--<br />
+i checked it on iptables</label></li>
+</ul>
+<p>i think this is fine and done.</p>
+<h1 id="router">router</h1>
+<h2 id="set-server-ip-to-static">set server ip to static</h2>
+<figure>
+<img src=":/068275d79e7140e5aa594e5a1b8f4a5d"
+alt="e8f1a94f2dab48838d14ee363e149bf9.png" />
+<figcaption
+aria-hidden="true">e8f1a94f2dab48838d14ee363e149bf9.png</figcaption>
+</figure>
+<h2 id="set-up-router-to-listen-to-pihole">set up router to listen to
+pihole</h2>
+<ul>
+<li>go to http://192.168.178.1/#netSet</li>
+<li>scroll down completely</li>
+<li>there are two buttons one to change IPv4 and one to change IPv6
+settings ### changes</li>
+<li>update “Lokaler DNS Server” to
+<code>pihole-server-IPv4-address</code></li>
+<li>in IPv6 settings update the IPv6 address under
+<code>DNSv6-Server im Heimnetz</code></li>
+<li>in IPv6 or v4 settings (dont remember) change
+<code>Nur DNS Server zuweisen</code> to
+<code>DNS Server Präfix und IPv6 addresse zuweisen</code></li>
+</ul>
+<hr />
+<p>Thanks for reading my log :) Add your FAQ below if you need help and
+write me <span class="citation"
+data-cites="geoeee:matrix.fenker.eu">@geoeee:matrix.fenker.eu</span></p>
