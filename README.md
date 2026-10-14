@@ -1,6 +1,7 @@
 # Open Coding Stammtisch Z10 Dashboard Website
-Deployed [here](https://stammtafel.github.io/oc-z10/).🍓
-
+This legacy version is deployed [here](https://stammtafel.github.io/oc-z10/).🍓
+But the up-to-date version is deployed [here](https://stammtafel.codeperg.org/oc-z10/).🍍
+and maintained [here](https://stammtafel.codeberg.page/oc-z10/)🍍
 # Blog entries
 ## Write them in markdown
 **Notes:** 
